@@ -9,7 +9,7 @@ class Music(object):
 	#初始化
 	def __init__(self):
 		#连接数据库
-		self.__conn=pymysql.connect(host='localhost',user='root',passwd='8355189',db='netease_music',port=3306,charset='utf8')
+		self.__conn=pymysql.connect(host='localhost',user='root',passwd='123456',db='netease_music',port=3306,charset='utf8')
 		self.__header = {
 		    'Host': 'music.163.com',
 		    'Proxy-Connection': 'keep-alive',
