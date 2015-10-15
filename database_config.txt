@@ -1,0 +1,14 @@
+#关于数据库的一些参数
+
+数据库名:netease_music
+encoding: utf8_general_ci
+
+hs_song表
+ 字段：
+ 	song_id int primary
+ 	song_name varchar(200)
+ 	song_singer varchar(200)
+ 	song_singer_id int NULL
+ 	song_mp3_url text 
+ 	song_pic_url text
+ 	song_album_id int NULL

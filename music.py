@@ -10,6 +10,7 @@ class Music(object):
 	def __init__(self):
 		#连接数据库
 		self.__conn=pymysql.connect(host='localhost',user='root',passwd='123456',db='netease_music',port=3306,charset='utf8')
+		#header中的cookie在打开(或登陆)网易云音乐后通过fiddler获取
 		self.__header = {
 		    'Host': 'music.163.com',
 		    'Proxy-Connection': 'keep-alive',
@@ -21,7 +22,7 @@ class Music(object):
 		    'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4',
 		    'Cookie': 'visited=true; _ntes_nuid=d9d2b31ec03fbea34f79bca0dd66a268; P_INFO=hishengjpr@163.com|1444787345|1|lofter|00&99|gud&1444551405&exchange#gud&440300#10#0#0|137215&1||hishengjpr@163.com; NTES_PASSPORT=IQjcjlJrjqQTVuPX5StuP5IIzQVFZs5rmuAfgeeUYjTdYtclYUOmhkZuWiAgat2w59Yt1O0c6B357T50N8LMHUMUgZCNUeZDnnz.oPOIFTQpD; JSESSIONID-WYYY=76aed175e59cef4cb9b04d021f8e4aa3b53468bd7ac26a0202ed567ec2de6de354f61172eb568e4f1f9fd26cca07244f02e4b5bd5a9c05cf144cd1bc7d233c0282e47014f1e42c5c1af10f65de63c914328a99d03d0a891de3b20066e57491604cd96655e8cd3a3fa8c9a5c7fdaaf18c30c0f4a41bd17a2ea8b3d38e91a11b2249f3d0ed%3A1444879917030; _iuqxldmzr_=25; __utma=94650624.145050166.1444820695.1444836333.1444877989.3; __utmb=94650624.4.10.1444877989; __utmc=94650624; __utmz=94650624.1444820695.1.1.utmcsr=heysoo.com|utmccn=(referral)|utmcmd=referral|utmcct=/Index/index.html'
 		}
-		#默认资源目录路径
+		#默认资源目录路径，根据自己的情况修改
 		self.__data_path = 'D:\workspace\python\music163\data'
 	#读取文件
 	def read_file(self,path):
